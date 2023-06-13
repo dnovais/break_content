@@ -16,4 +16,17 @@ RSpec.describe BreakContent do
       end
     end
   end
+
+  context "when the content is less or equal the limit" do
+    it "should return the content" do
+      content = "In 1991, while studying."
+      limit = 40
+
+      expected_result = "In 1991, while studying."
+
+      result = described_class.new(content, limit).call
+
+      expect(result).to eq(expected_result)
+    end
+  end
 end
