@@ -29,4 +29,17 @@ RSpec.describe BreakContent do
       expect(result).to eq(expected_result)
     end
   end
+
+  context "when content is empty" do
+    it "should return empty" do
+      content = ""
+      limit = 40
+
+      expected_result = ""
+
+      result = described_class.new(content, limit).call
+
+      expect(result).to eq(expected_result)
+    end
+  end
 end
